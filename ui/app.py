@@ -125,8 +125,10 @@ class TranslationServiceApp:
         # 重新安排定时器
         self.root.after(100, self._update_ui_timer)
     
-    def run(self):
+    def run(self, auto_run = None):
         """运行应用程序"""
+        if auto_run:
+            self.toggle_server()
         self._log("翻译服务应用已启动")
         self.root.mainloop()
     
